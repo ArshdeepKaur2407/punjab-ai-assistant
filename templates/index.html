@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Punjab AI Citizen Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div id="overlay"></div>
+
+    <!-- Sidebar -->
+
+    <aside id="sidebar">
+
+        <div class="sidebar-top">
+
+            <span id="closeBtn">✕</span>
+
+            <h2 id="quickServicesTitle">Quick Services</h2>
+
+        </div>
+
+        <a id="navHome" href="#" class="service-link" data-service="Home">
+            🏠 Home
+        </a>
+
+        <a id="navBirth" href="#" class="service-link" data-service="Birth Certificate">
+            📄 Birth Certificate
+        </a>
+
+        <a id="navIncome" href="#" class="service-link" data-service="Income Certificate">
+            💰 Income Certificate
+        </a>
+
+        <a id="navCaste" href="#" class="service-link" data-service="Caste Certificate">
+            🪪 Caste Certificate
+        </a>
+
+        <a id="navResidence" href="#" class="service-link" data-service="Residence Certificate">
+            🏡 Residence Certificate
+        </a>
+
+        <a id="navMarriage" href="#" class="service-link" data-service="Marriage Certificate">
+            💍 Marriage Certificate
+        </a>
+
+        <a id="navDriving" href="#" class="service-link" data-service="Driving Licence">
+            🚗 Driving Licence
+        </a>
+
+        <a id="navAadhaar" href="#" class="service-link" data-service="Aadhaar">
+            🆔 Aadhaar
+        </a>
+
+        <a id="navDigiLocker" href="#" class="service-link" data-service="DigiLocker">
+            📂 DigiLocker
+        </a>
+
+        <a id="navESewa" href="#" class="service-link" data-service="Punjab eSewa">
+            🏛 Punjab eSewa
+        </a>
+
+        <a id="navSevaKendra" href="#" class="service-link" data-service="Seva Kendra">
+            📍 Seva Kendras
+        </a>
+
+        <a id="navScholarship" href="#" class="service-link" data-service="Scholarship">
+            🎓 Scholarships
+        </a>
+
+    </aside>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <span id="menuBtn">☰</span>
+
+            <span class="logo" id="logoText">
+                Punjab AI Citizen Assistant
+            </span>
+
+        </div>
+
+        <div class="nav-right">
+
+            <select id="language">
+
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+
+            </select>
+
+        </div>
+
+    </nav>
+
+    <!-- Main -->
+
+    <main>
+
+        <div class="chat-container">
+
+            <div class="welcome">
+
+                <h1 id="welcomeTitle">
+                    Punjab AI Citizen Assistant
+                </h1>
+
+                <p id="welcomeText">
+                    AI can make mistakes. Always verify information using official Punjab Government sources.
+                </p>
+
+            </div>
+
+            <div id="chatBox" class="chat-box">
+
+                <div class="bot-message">
+
+                    👋Hello! I'm here to assist you with 
+                    Punjab Government services. 
+                    Click the sidebar to explore services and 
+                    view verified information from official sources.
+
+                </div>
+
+            </div>
+
+            <!-- Updated Input Area -->
+            <div class="input-area">
+
+                <input
+                    id="userInput"
+                    type="text"
+                    placeholder="Ask anything about Punjab Government Services...">
+
+                <button id="micBtn" class="icon-btn" title="Voice Input">
+                    🎤
+                </button>
+
+                <button id="sendBtn" class="icon-btn" onclick="sendMessage()">
+                    ➤
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function fillQuestion(question) {
+            document.getElementById("userInput").value = question;
+            sendMessage();
+        }
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

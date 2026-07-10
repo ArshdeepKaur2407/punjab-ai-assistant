@@ -1,0 +1,6 @@
+Flask==3.1.1
+google-genai
+tavily-python
+python-dotenv
+markdown
+gunicorn
