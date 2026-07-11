@@ -3,7 +3,6 @@
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Flask](https://img.shields.io/badge/Flask-3.1-green)
 ![Gemini](https://img.shields.io/badge/Google-Gemini-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
 An AI-powered web application that helps citizens access Punjab Government services through natural language queries in English and Punjabi.
 
 ## Features
@@ -104,20 +103,6 @@ https://punjab-ai-assistant.onrender.com
 
 ---
 
-## Screenshots
-
-Add screenshots here.
-
-Example:
-
-```
-Homepage
-AI Chat
-Punjabi Interface
-```
-
----
-
 ## Future Improvements
 
 - Voice Assistant
@@ -150,6 +135,10 @@ https://github.com/ArshdeepKaur2407
 
 ---
 
-## License
+## Copyright
 
-This project is licensed under the MIT License.
+© 2026 Arshdeep Kaur. All Rights Reserved.
+
+This project and its source code are the intellectual property of Arshdeep Kaur.
+
+No part of this repository may be copied, modified, distributed, reproduced, or used for commercial or non-commercial purposes without prior written permission from the author.
