@@ -12,7 +12,7 @@ TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 # Official Government Websites
 OFFICIAL_DOMAINS = [
     "eservices.punjab.gov.in",
-    "sewa.punjab.gov.in",
+    "esewa.punjab.gov.in",
     "punjab.gov.in",
     "india.gov.in",
     "uidai.gov.in",

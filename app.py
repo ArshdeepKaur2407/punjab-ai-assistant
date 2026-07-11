@@ -123,7 +123,6 @@ def chat():
         "links": links
     })
 
-
 # -----------------------------
 # Service Info API
 # -----------------------------
@@ -140,22 +139,63 @@ def service_info():
             "message": "Service not found."
         })
 
+    # -----------------------------
+    # Special handling for Scholarships
+    # -----------------------------
+    if service == "scholarships":
+        scholarship = SERVICES["scholarships"]
+
+        if language != "en":
+            scholarship = {
+                "title": translate_text(scholarship["title"], language),
+                "description": translate_text(scholarship["description"], language),
+                "items": [
+                    {
+                        "name": translate_text(item["name"], language),
+                        "eligibility": translate_text(item["eligibility"], language),
+                        "benefits": translate_text(item["benefits"], language),
+                        "how_to_apply": translate_text(item["how_to_apply"], language),
+                        "official_link": item["official_link"]
+                    }
+                    for item in scholarship["items"]
+                ]
+            }
+
+        return jsonify({
+            "success": True,
+            "type": "scholarships",
+            "title": scholarship["title"],
+            "description": scholarship["description"],
+            "items": scholarship["items"]
+        })
+
+    # -----------------------------
+    # Other Services
+    # -----------------------------
     info = SERVICES[service]
 
-    # Copy + translate safely
-    try:
-        if language != "en":
+    if language != "en":
+        try:
             info = {
                 "purpose": translate_text(info["purpose"], language),
-                "documents": [translate_text(d, language) for d in info["documents"]],
+                "documents": [
+                    translate_text(doc, language)
+                    for doc in info["documents"]
+                ],
                 "fee": translate_text(info["fee"], language),
-                "processing_time": translate_text(info["processing_time"], language),
-                "apply_online": translate_text(info["apply_online"], language),
-                "apply_offline": translate_text(info["apply_offline"], language),
+                "processing_time": translate_text(
+                    info["processing_time"], language
+                ),
+                "apply_online": translate_text(
+                    info["apply_online"], language
+                ),
+                "apply_offline": translate_text(
+                    info["apply_offline"], language
+                ),
                 "links": info["links"]
             }
-    except Exception as e:
-        print("Sidebar translation error:", e)
+        except Exception as e:
+            print("Sidebar translation error:", e)
 
     return jsonify({
         "success": True,
@@ -168,7 +208,6 @@ def service_info():
         "apply_offline": info["apply_offline"],
         "links": info["links"]
     })
-
 
 if __name__ == "__main__":
     app.run(debug=True)
