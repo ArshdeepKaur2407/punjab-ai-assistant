@@ -9,6 +9,7 @@ An AI-powered web application that helps citizens access Punjab Government servi
 
 - AI-powered citizen assistance
 - Supports English and Punjabi
+- Supports English,Hindi and Punjabi
 - Intelligent government service detection
 - Official Punjab Government links
 - AI-generated responses using Google Gemini
@@ -105,8 +106,6 @@ https://punjab-ai-assistant.onrender.com
 
 ## Future Improvements
 
-- Voice Assistant
-- Speech-to-Text
 - OCR for Government Documents
 - More Punjab Government Services
 - User Authentication
